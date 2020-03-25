@@ -14,9 +14,5 @@ public class BookListController {
 	 
 	 	/* GET ALL BOOKS WITH RATING*/
 	    //Shows only title and rating as the task said
-	    @GetMapping("/rating")
-	    public List<BookList> retrieveAllRating() {
-	    	return bookListService.retrieveAllRating();
-	    }
 	    /*END OF BOOKS WITH RATING*/
 }

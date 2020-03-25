@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,20 +25,15 @@ import ee.assignment.junior.books.domain.Rating;
 import ee.assignment.junior.books.domain.RatingRepository;
 
 
-@RestController("rating")
+@RestController
+@RequestMapping("rating")
 public class RatingController {
 	
 	@Autowired
 	private RatingService ratingService;
 	
 	@Autowired BookListService bookListService;
-	/* ADD RATING BY BOOK ISBN*/
-	@GetMapping() 
-    public List<Rating> retrieveAllRatings() {
-    	return ratingService.retrieveAllRatings();
-    }
-	
-	
+	/* ADD RATING BY BOOK ISBN*/	
     @PostMapping("/{isbn}")
     public ResponseEntity<Object> createRating(@RequestBody Rating rating) {
     	return ratingService.createRating(rating);

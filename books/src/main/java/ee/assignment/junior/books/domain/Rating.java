@@ -1,5 +1,6 @@
 package ee.assignment.junior.books.domain;
 
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -18,11 +19,13 @@ public class Rating {
     @NotNull
     @Size(max = 13, min = 1)
     private String isbn;
-
+    
+    @OneToMany
+    @JoinColumn(name = "isbn")
+    private List<Book> books;
+    
     @Column(name = "book_rating", nullable = false)
     @NotNull
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "books_isbn")
     private int rating;
 
     public Long getId() {
