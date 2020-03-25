@@ -21,6 +21,8 @@ public class Rating {
 
     @Column(name = "book_rating", nullable = false)
     @NotNull
+    //@ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "books_isbn")
     private int rating;
 
     public Long getId() {

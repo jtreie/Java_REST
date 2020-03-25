@@ -2,7 +2,9 @@ package ee.assignment.junior.books.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,6 +17,7 @@ public class Book {
     @Column(name = "isbn")
     @NotNull
     @Size(max = 13, min = 1)
+    //@OneToMany(fetch = FetchType.LAZY, mappedBy = "books")
     private String isbn;
 
     @Column(name = "title", nullable = false)
@@ -35,7 +38,7 @@ public class Book {
     @Size(max = 255)
     private String publisher;
 
-    public String getIsbn() {
+	public String getIsbn() {
         return isbn;
     }
 
