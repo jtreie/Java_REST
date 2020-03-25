@@ -1,6 +1,7 @@
 package ee.assignment.junior.books.domain;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;

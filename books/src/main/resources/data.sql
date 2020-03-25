@@ -10,7 +10,7 @@ INSERT INTO books VALUES ('054792822X','The Hobbit','J. R. R. Tolkien',2012,'Hou
 INSERT INTO books VALUES ('152479628X','Fire & Blood','George R. R. Martin',2018,'Bantam');
 INSERT INTO books VALUES ('0679753796','Dance dance dance','Haruki Murakami',1995,'Vintage');
 INSERT INTO books VALUES ('0375702245','The Idiot','Fyodor Dostojevsky',2003,'Vintage');
-INSERT INTO books VALUES ('1908251905','Vargamäe','Anton Hansen Tammsaare',2019,'Vagabond Voices');
+INSERT INTO books VALUES ('1908251905','Vargamäe','A. H. Tammsaare',2019,'Vagabond Voices');
 INSERT INTO books VALUES ('0743412281','Pet Sematary','Stephen King',2002,'Gallery Books');
 INSERT INTO books VALUES ('1984819194','Brief Answers to the Big Questions','Stephen Hawking',2018,'Bantam');
 
