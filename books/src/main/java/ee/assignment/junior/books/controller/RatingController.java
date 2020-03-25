@@ -17,24 +17,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import ee.assignment.junior.books.service.BookListService;
 import ee.assignment.junior.books.service.RatingService;
+import ee.assignment.junior.books.domain.BookList;
 import ee.assignment.junior.books.domain.Rating;
 import ee.assignment.junior.books.domain.RatingRepository;
 
 
-@RestController
+@RestController("rating")
 public class RatingController {
 	
 	@Autowired
 	private RatingService ratingService;
+	
+	@Autowired BookListService bookListService;
 	/* ADD RATING BY BOOK ISBN*/
-	@GetMapping("/ratings") 
+	@GetMapping() 
     public List<Rating> retrieveAllRatings() {
     	return ratingService.retrieveAllRatings();
     }
-    @PostMapping("/rating/{isbn}")
+	
+	
+    @PostMapping("/{isbn}")
     public ResponseEntity<Object> createRating(@RequestBody Rating rating) {
     	return ratingService.createRating(rating);
+    }
+    
+    
+    @GetMapping()
+    public List<BookList> retrieveAllRating() {
+    	return bookListService.retrieveAllRating();
     }
     
     //Adds to table ratings, so cannot be seen in toplist or pages that use other tables
