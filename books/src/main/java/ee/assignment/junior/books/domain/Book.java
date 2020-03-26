@@ -11,16 +11,19 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "books")
+@Data
 public class Book {
 
     @Id
     @Column(name = "isbn")
     @NotNull
     @Size(max = 13, min = 1)
-    //@OneToMany(fetch = FetchType.LAZY, mappedBy = "books")
     private String isbn;
+    
     @ManyToOne
     private Rating rating;
 
@@ -42,43 +45,4 @@ public class Book {
     @Size(max = 255)
     private String publisher;
 
-	public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getYearOfPublication() {
-        return yearOfPublication;
-    }
-
-    public void setYearOfPublication(int yearOfPublication) {
-        this.yearOfPublication = yearOfPublication;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
 }

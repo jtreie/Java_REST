@@ -5,6 +5,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "book_ratings")
 public class Rating {
@@ -20,8 +22,7 @@ public class Rating {
     @Size(max = 13, min = 1)
     private String isbn;
     
-    @OneToMany
-    @JoinColumn(name = "isbn")
+    @OneToMany(mappedBy = "rating")
     private List<Book> books;
     
     @Column(name = "book_rating", nullable = false)

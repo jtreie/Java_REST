@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS books (
     author                varchar(255) not null,
     year_of_publication   int(10) not null,
     publisher             text,
-    rating 				  bigint,
+    rating_id 				  bigint,
     primary key (isbn)
 );
 

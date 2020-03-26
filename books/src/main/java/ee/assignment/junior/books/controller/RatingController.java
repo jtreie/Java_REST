@@ -20,6 +20,7 @@ import java.util.List;
 
 import ee.assignment.junior.books.service.BookListService;
 import ee.assignment.junior.books.service.RatingService;
+import ee.assignment.junior.books.domain.Book;
 import ee.assignment.junior.books.domain.BookList;
 import ee.assignment.junior.books.domain.Rating;
 import ee.assignment.junior.books.domain.RatingRepository;
@@ -35,8 +36,8 @@ public class RatingController {
 	@Autowired BookListService bookListService;
 	/* ADD RATING BY BOOK ISBN*/	
     @PostMapping("/{isbn}")
-    public ResponseEntity<Object> createRating(@RequestBody Rating rating) {
-    	return ratingService.createRating(rating);
+    public Book createRating(@PathVariable String isbn, @RequestBody Rating rating) {
+    	return ratingService.createRating(isbn, rating);
     }
     
     
