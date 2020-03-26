@@ -1,30 +1,19 @@
 package ee.assignment.junior.books.controller;
 
 
-import lombok.extern.slf4j.Slf4j;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
-
 import ee.assignment.junior.books.service.BookListService;
 import ee.assignment.junior.books.service.RatingService;
 import ee.assignment.junior.books.domain.Book;
 import ee.assignment.junior.books.domain.BookList;
 import ee.assignment.junior.books.domain.Rating;
-import ee.assignment.junior.books.domain.RatingRepository;
-
 
 @RestController
 @RequestMapping("rating")
@@ -39,16 +28,18 @@ public class RatingController {
     public Book createRating(@PathVariable String isbn, @RequestBody Rating rating) {
     	return ratingService.createRating(isbn, rating);
     }
+    /* END ADD RATING BY BOOK ISBN*/
     
     
+    /* GET ALL BOOKS WITH RATING*/
+    //Shows only title and rating as the task said
     @GetMapping()
     public List<BookList> retrieveAllRating() {
     	return bookListService.retrieveAllRating();
     }
+    /*END OF BOOKS WITH RATING*/
     
-    //Adds to table ratings, so cannot be seen in toplist or pages that use other tables
-    /* END OF ADD RATING BY BOOK ISBN*/
-	
+    
 	/* Start Rating*/
     //This part wasn't required by the task
     /*
